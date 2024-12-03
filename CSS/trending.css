@@ -119,6 +119,7 @@ section{
     object-fit: cover;
     object-position: center;
     z-index: -1;
+    display: block;
 }
 .swiper-pagination-bullet{
     width: 6px !important;
@@ -165,14 +166,18 @@ section{
 .overlay span {
     font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 8px; /* Space between span and heading */
+    margin-bottom: 0px; /* Space between span and heading */
     color: #8498ea;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgb(0, 255, 255,0.5),0 0 20px rgb(0, 255, 255,0.5);
 }
 
 /* Styling for the heading span (Movie title) */
 .overlay .heading-span {
     font-size: 2.5rem;
     font-weight: bold;
+    text-shadow: 0 0 10px rgba(12, 15, 15, 0.5),0 0 20px rgba(12, 20, 20, 0.5);
+    letter-spacing: 8px;
 }
 
 .heading{
@@ -240,7 +245,7 @@ section{
     display: flex;
     gap: 10px;
   }
-  
+
   .pfp {
     position: relative;
     top: 210px;
@@ -275,10 +280,10 @@ section{
     bottom: 15px;
     height: 230px;
     width: 230px;
-
     border-radius: 10px;
-
   }
+
+  
   .title-1 {
     color: white;
     font-size: 25px;
@@ -475,3 +480,44 @@ button:hover{
     }
   }
   
+  /* Responsive Design */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .movie-base {
+        flex: 1 1 calc(33.33% - 20px); /* 3 items per row */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+/* Mobile (480px - 768px) */
+@media (max-width: 768px) {
+    .movie-base {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row */
+        max-width: calc(50% - 20px);
+    }
+
+    h2.heading {
+        font-size: 1.8rem;
+    }
+
+    .box h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Small Mobile (less than 480px) */
+@media (max-width: 480px) {
+    .movie-base {
+        flex: 1 1 100%; /* 1 item per row */
+        max-width: 100%;
+    }
+
+    h2.heading {
+        font-size: 1.5rem;
+    }
+
+    .box h3 {
+        font-size: 0.9rem;
+    }
+}
